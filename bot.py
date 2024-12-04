@@ -1,6 +1,6 @@
 import logging
 from aiogram import Bot, Dispatcher
-from aiogram.enums import ParseMode
+from aiogram.enums.parse_mode import ParseMode
 from aiogram.types import Message
 
 API_TOKEN = '7390881267:AAG1t89iR5VM9j1TAHBXieyWu9S4nvtQDzg'
