@@ -1,3 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("Music Player Loaded");
-});
+// Здесь можно добавить дополнительную логику, например, обработку ошибок или другие функции для плеера.
+window.onload = function () {
+    console.log('Музыкальный плеер загружен!');
+};
