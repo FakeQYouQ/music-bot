@@ -2,7 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, WebAppI
 from telegram.ext import Application, CommandHandler, ContextTypes
 
 # Токен вашего бота
-TOKEN = '8140337979:AAFWnIwvNAWqB2Q_jog6ryWhpIGVr2KY0pc'
+TOKEN = '7390881267:AAG1t89iR5VM9j1TAHBXieyWu9S4nvtQDzg'
 
 # Функция, которая будет отправлять сообщение пользователю с кнопкой
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
