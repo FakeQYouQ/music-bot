@@ -1,23 +1,33 @@
-const tracks = [
-    { name: "Aikko Prinjat Sebja", file: "aikko-prinjat-sebja.mp3" },
-    { name: "Track 2", file: "track2.mp3" },
-    { name: "Track 3", file: "track3.mp3" }
-];
+let audio = new Audio('путь к вашему треку');
 
-function loadTracks() {
-    const trackListDiv = document.getElementById("trackList");
-    tracks.forEach(track => {
-        const trackButton = document.createElement("button");
-        trackButton.textContent = track.name;
-        trackButton.addEventListener("click", () => playTrack(track.file));
-        trackListDiv.appendChild(trackButton);
-    });
+document.getElementById('play-pause').addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+    document.getElementById('play-pause').innerText = '⏸'; // Изменяем кнопку на паузу
+  } else {
+    audio.pause();
+    document.getElementById('play-pause').innerText = '▶'; // Изменяем кнопку на воспроизведение
+  }
+});
+
+audio.addEventListener('timeupdate', () => {
+  let progress = (audio.currentTime / audio.duration) * 100;
+  document.getElementById('progress').value = progress;
+
+  let currentTime = formatTime(audio.currentTime);
+  let duration = formatTime(audio.duration);
+
+  document.getElementById('current-time').innerText = currentTime;
+  document.getElementById('duration').innerText = duration;
+});
+
+document.getElementById('progress').addEventListener('input', (e) => {
+  let newTime = (e.target.value / 100) * audio.duration;
+  audio.currentTime = newTime;
+});
+
+function formatTime(seconds) {
+  let minutes = Math.floor(seconds / 60);
+  let sec = Math.floor(seconds % 60);
+  return `${minutes}:${sec < 10 ? '0' + sec : sec}`;
 }
-
-function playTrack(trackFile) {
-    const audioPlayer = document.getElementById("audioPlayer");
-    audioPlayer.src = trackFile;
-    audioPlayer.play();
-}
-
-window.onload = loadTracks;
