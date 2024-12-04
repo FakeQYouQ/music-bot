@@ -3,7 +3,7 @@ from aiogram import Bot, Dispatcher
 from aiogram.types import Message
 from aiogram.filters import Command
 
-API_TOKEN = '7390881267:AAG1t89iR5VM9j1TAHBXiey'  # Убедитесь, что токен правильный
+API_TOKEN = '7390881267:AAG1t89iR5VM9j1TAHBXieyWu9S4nvtQDzg'  # Убедитесь, что токен правильный
 
 bot = Bot(token=API_TOKEN, parse_mode="HTML")
 dp = Dispatcher()
