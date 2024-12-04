@@ -17,7 +17,7 @@ async def play_music(message: Message):
     await message.answer("Вот ваш трек: /music_link")
 
 async def main():
-    await dp.start_polling()  # Запускаем polling без использования executor
+    await dp.start_polling(bot)  # Передаем bot как аргумент
 
 if __name__ == '__main__':
     asyncio.run(main())
