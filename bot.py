@@ -1,8 +1,7 @@
 import logging
 from aiogram import Bot, Dispatcher
-from aiogram.enums import ParseMode  # Обновлено для aiogram 3.x
+from aiogram.enums import ParseMode
 from aiogram.types import Message
-from aiogram.utils import executor
 
 API_TOKEN = '7390881267:AAG1t89iR5VM9j1TAHBXieyWu9S4nvtQDzg'
 
@@ -19,5 +18,12 @@ async def send_welcome(message: Message):
 async def play_music(message: Message):
     await message.answer("Вот ваш трек: /music_link")
 
+async def main():
+    try:
+        await dp.start_polling(bot)
+    finally:
+        await bot.session.close()
+
 if __name__ == '__main__':
-    executor.run(dp)
+    import asyncio
+    asyncio.run(main())
