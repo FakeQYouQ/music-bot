@@ -1,33 +1,13 @@
-let audio = new Audio('путь к вашему треку');
+document.addEventListener('DOMContentLoaded', function () {
+    let trackInfo = {
+        name: "Aikko - Принят Себя",
+        artist: "Aikko",
+        audio: "tracks/aikko-prinjat-sebja.mp3",
+        cover: "album-cover.jpg"
+    };
 
-document.getElementById('play-pause').addEventListener('click', () => {
-  if (audio.paused) {
-    audio.play();
-    document.getElementById('play-pause').innerText = '⏸'; // Изменяем кнопку на паузу
-  } else {
-    audio.pause();
-    document.getElementById('play-pause').innerText = '▶'; // Изменяем кнопку на воспроизведение
-  }
+    document.querySelector('.track-name').textContent = trackInfo.name;
+    document.querySelector('.artist-name').textContent = trackInfo.artist;
+    document.querySelector('audio source').setAttribute('src', trackInfo.audio);
+    document.querySelector('.album-art img').setAttribute('src', trackInfo.cover);
 });
-
-audio.addEventListener('timeupdate', () => {
-  let progress = (audio.currentTime / audio.duration) * 100;
-  document.getElementById('progress').value = progress;
-
-  let currentTime = formatTime(audio.currentTime);
-  let duration = formatTime(audio.duration);
-
-  document.getElementById('current-time').innerText = currentTime;
-  document.getElementById('duration').innerText = duration;
-});
-
-document.getElementById('progress').addEventListener('input', (e) => {
-  let newTime = (e.target.value / 100) * audio.duration;
-  audio.currentTime = newTime;
-});
-
-function formatTime(seconds) {
-  let minutes = Math.floor(seconds / 60);
-  let sec = Math.floor(seconds % 60);
-  return `${minutes}:${sec < 10 ? '0' + sec : sec}`;
-}

@@ -1,17 +1,27 @@
-<div class="player">
-  <div class="player__track-info">
-    <div class="player__track-name">Название трека</div>
-    <div class="player__track-artist">Исполнитель</div>
-  </div>
-  <div class="player__controls">
-    <button class="player__btn" id="prev-track">←</button>
-    <button class="player__btn" id="play-pause">▶</button>
-    <button class="player__btn" id="next-track">→</button>
-  </div>
-  <div class="player__progress">
-    <input type="range" id="progress" value="0" max="100" step="1" />
-  </div>
-  <div class="player__time">
-    <span id="current-time">00:00</span> / <span id="duration">03:00</span>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музыкальный Плеер</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="player">
+            <div class="album-art">
+                <img src="album-cover.jpg" alt="Обложка альбома">
+            </div>
+            <div class="track-info">
+                <h2 class="track-name">Название трека</h2>
+                <p class="artist-name">Исполнитель</p>
+            </div>
+            <audio controls>
+                <source src="tracks/aikko-prinjat-sebja.mp3" type="audio/mp3">
+                Ваш браузер не поддерживает аудио.
+            </audio>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
