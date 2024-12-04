@@ -1,4 +1,9 @@
-// Здесь можно добавить дополнительную логику, например, обработку ошибок или другие функции для плеера.
-window.onload = function () {
-    console.log('Музыкальный плеер загружен!');
-};
+function playAudio() {
+  var audio = document.getElementById("audioPlayer");
+  audio.play();
+}
+
+function pauseAudio() {
+  var audio = document.getElementById("audioPlayer");
+  audio.pause();
+}

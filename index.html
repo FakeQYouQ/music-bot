@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Музыкальная Платформа</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Музыкальный Плеер</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Добро пожаловать!</h1>
-        <p>Ваш музыкальный плеер загружается...</p>
-
-        <div id="audio-player">
-            <audio controls>
-                <source src="https://github.com/FakeQYouQ/music-bot/raw/main/aikko-prinjat-sebja.mp3" type="audio/mp3">
-                Ваш браузер не поддерживает элемент audio.
-            </audio>
-        </div>
+  <div class="container">
+    <h1>Добро пожаловать в музыкальный плеер!</h1>
+    <p>Нажмите на кнопку ниже, чтобы начать прослушивание.</p>
+    
+    <div class="player">
+      <audio id="audioPlayer" controls>
+        <source src="aikko-prinjat-sebja.mp3" type="audio/mp3">
+        Ваш браузер не поддерживает элемент audio.
+      </audio>
     </div>
 
-    <script src="script.js"></script>
+    <button onclick="playAudio()">Воспроизвести</button>
+    <button onclick="pauseAudio()">Пауза</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
